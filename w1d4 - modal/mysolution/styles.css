@@ -1,0 +1,32 @@
+body {
+  width: 300px;
+  padding: 0;
+  background-color: blueviolet;
+}
+
+/* Star select all child nodes */
+#products * {
+  background-color: aqua;
+}
+article p {
+  text-align: right;
+}
+#modal_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#modal_window {
+  max-width: 80vw;
+}
+
+.hidden {
+  display: none;
+}
