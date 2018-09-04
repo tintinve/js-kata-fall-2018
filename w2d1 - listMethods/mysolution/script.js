@@ -1,5 +1,5 @@
 "use strict";
-let method = "newarray";
+let method = "modify";
 function listMethods() {
   let list = document.querySelectorAll("#" + method + " > ul > li");
   list.forEach(displayElement);
@@ -7,7 +7,7 @@ function listMethods() {
 function displayElement(element) {
   console.log(element.textContent);
 }
-
-listMethods("modify");
-listMethods("info");
-listMethods("newarray");
+listMethods();
+//listMethods("modify");
+//listMethods("info");
+//listMethods("newarray");
