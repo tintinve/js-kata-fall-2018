@@ -17,5 +17,6 @@ console.log(indexOfFirst);
 console.log(indexSubstring);
 console.log(parag.replace(change, "broder"));
 
-// Solution 1
+// Solution 1git
 console.log(filename.replace(changeChar, "3"));
+console.log(name[0]);
