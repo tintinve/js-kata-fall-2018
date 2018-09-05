@@ -1,6 +1,6 @@
 "use strict";
 let template = document.querySelector(".template1").content;
-let hash = "Pedro";
+let hash = "Copenhagen";
 let fetchLink = "https://kea-alt-del.dk/twitter/api/?count=10?hashtag=" + hash;
 let appendTo = document.querySelector("main");
 fetch(fetchLink)
