@@ -1,12 +1,20 @@
-function fetchData() {
-  fetch("https://kea-alt-del.dk/twitter/api/")
-    .then(e => e.json())
-    .then(showContent);
-}
-function showContent(data) {
-  console.log(data);
-  data.forEach(showEvent);
-  console.log(showEvent);
+"use strict";
+let template = document.querySelector(".template1").content;
+let hash = "Pedro";
+let fetchLink = "https://kea-alt-del.dk/twitter/api/?count=10?hashtag=" + hash;
+let appendTo = document.querySelector("main");
+fetch(fetchLink)
+  .then(result => result.json())
+  .then(showTweets);
+
+function showTweets(tweet) {
+  let tweetArray = tweet.statuses;
+  tweetArray.forEach(showTweet);
 }
 
-fetchData();
+function showTweet(aTweet) {
+  console.log(aTweet);
+  let clone = template.cloneNode(true);
+  clone.querySelector("h1").textContent = aTweet.text;
+  appendTo.appendChild(clone);
+}
