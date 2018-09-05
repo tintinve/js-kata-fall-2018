@@ -11,3 +11,4 @@ closeButton.addEventListener("click", closeModal);
 function closeModal() {
   modal_container.classList.add("hidden");
 }
+console.log("Ok");
