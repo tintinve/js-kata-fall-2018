@@ -21,5 +21,5 @@ function findAll(arr, val) {
   return indexes;
 }
 
-var catsAt = findAll(animals, "cat");
+var catsAt = findAll(animals, "dog");
 console.log(catsAt);
