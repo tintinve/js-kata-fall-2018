@@ -1,0 +1,11 @@
+section {
+  width: 100vw;
+  height: 100px;
+}
+.bkgColor {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+code {
+}
