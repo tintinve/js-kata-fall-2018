@@ -1,0 +1,6 @@
+.divTransition {
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(278, 70%, 70%);
+  transition: background-color 0.4s;
+}
