@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        textarea {
+            font-size: 50px;
+            width: 300px;
+            height: 100px;
+            transition: font-size 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea onkeydown="countChars('data');"></textarea>
+    <script>
+        function countChars(data) {
+            var len = document.querySelector("textarea").value.length;
+            if (len >= 10) { document.querySelector("textarea").style.fontSize = "40px" };
+            if (len >= 20) { document.querySelector("textarea").style.fontSize = "30px" };
+            if (len >= 30) { document.querySelector("textarea").style.fontSize = "20px" };
+            if (len >= 40) { document.querySelector("textarea").style.fontSize = "15px" }
+        }
+    </script>
+</body>
+
+</html>
