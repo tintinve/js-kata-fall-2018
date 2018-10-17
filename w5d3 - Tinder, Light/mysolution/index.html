@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 400px;
+            height: 550px;
+            background-color: blue;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+
+        }
+
+        img {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 15px 0px 0px 13%;
+
+
+        }
+
+        .modal {
+            display: none;
+            background-color: #4CAF50;
+            width: 330px;
+            height: 100px;
+            text-align: center;
+            position: absolute;
+            top: 420px;
+            left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Name</h1>
+        <h2></h2>
+        <img src="" alt="">
+        <button class="noLike">
+            No Like
+        </button>
+        <button class="like">
+            Like
+        </button>
+
+        <div class="modal">
+            Oh yes!
+        </div>
+
+    </div>
+
+    <script>
+        let i = 0;
+        let likeUser;
+        let likeMe;
+        let gender = "males.json"
+
+
+        fetch(gender).then(res => res.json()).then(data => show(data));
+        document.querySelector(".like").addEventListener("click", fxLike);
+        document.querySelector(".noLike").addEventListener("click", fxNoLike);
+
+        function show(data) {
+            likeMe = data.results[i].inToYou;
+            document.querySelector("h1").textContent = data.results[i].name.first + " " + data.results[i].name.last;
+            document.querySelector("h2").textContent = data.results[i].dob.age;
+            document.querySelector("img").src = data.results[i].picture.large;
+        }
+        function fxLike() {
+            likeUser = true;
+            if (likeMe && likeUser) { nosGustamos() } else {
+                i = i + 1;
+                if (i > 19) { i = 0; }
+                fetch(gender).then(res => res.json()).then(data => show(data));
+            }
+
+        }
+        function fxNoLike() {
+            likeUser = false;
+            i = i + 1;
+            if (i > 19) { i = 0; }
+            fetch(gender).then(res => res.json()).then(data => show(data));
+        }
+        function nosGustamos() {
+            //if (likeMe && likeUser) { console.log() } else { console.log("sale paja") }
+            document.querySelector(".modal").style.display = "block";
+            document.querySelector(".modal").addEventListener("click", stillHorny);
+        }
+        function stillHorny() {
+            i = i + 1;
+            if (i > 19) { i = 0; }
+            fetch(gender).then(res => res.json()).then(data => show(data));
+            document.querySelector(".modal").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
