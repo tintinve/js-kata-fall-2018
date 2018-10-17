@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            border-radius: 50%;
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Times</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td class="td1"></td>
+            <td>
+                <svg width="1000" height="20">
+                    <rect id="graph1" width="0" height="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+                </svg>
+            </td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="td2"></td>
+            <td>
+                <svg width="1000" height="20">
+                    <rect id="graph2" width="0" height="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+                </svg>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="td3"></td>
+            <td>
+                <svg width="1000" height="20">
+                    <rect id="graph3" width="0" height="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+                </svg>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td class="td4"></td>
+            <td>
+                <svg width="1000" height="20">
+                    <rect id="graph4" width="0" height="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+                </svg>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td class="td5"></td>
+            <td>
+                <svg width="1000" height="20">
+                    <rect id="graph5" width="0" height="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+                </svg>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td class="td6"></td>
+            <td>
+                <svg width="1000" height="20">
+                    <rect id="graph6" width="0" height="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+                </svg>
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        let n1 = 0;
+        let n2 = 0;
+        let n3 = 0;
+        let n4 = 0;
+        let n5 = 0;
+        let n6 = 0;
+
+        setInterval(fx1, 100);
+        function fx1() {
+            let number = Math.floor(Math.random() * 6) + 1;
+            if (number == "1") { n1 = n1 + 1 } else if (number == "2") { n2 = n2 + 1 } else if (number == "3") { n3 = n3 + 1 } else if (number == "4") { n4 = n4 + 1 } else if (number == "5") { n5 = n5 + 1 } else if (number == "6") { n6 = n6 + 1 }
+            let n = [n1, n2, n3, n4, n5, n6];
+            document.querySelector(".td1").textContent = n1;
+            let line1 = n1 * 2 + "px";
+            document.getElementById("graph1").setAttribute("width", line1);
+            document.querySelector(".td2").textContent = n2;
+            let line2 = n2 * 2 + "px";
+            document.getElementById("graph2").setAttribute("width", line2);
+            document.querySelector(".td3").textContent = n3;
+            let line3 = n3 * 2 + "px";
+            document.getElementById("graph3").setAttribute("width", line3);
+            document.querySelector(".td4").textContent = n4;
+            let line4 = n4 * 2 + "px";
+            document.getElementById("graph4").setAttribute("width", line4);
+            document.querySelector(".td5").textContent = n5;
+            let line5 = n5 * 2 + "px";
+            document.getElementById("graph5").setAttribute("width", line5);
+            document.querySelector(".td6").textContent = n6;
+            let line6 = n6 * 2 + "px";
+            document.getElementById("graph6").setAttribute("width", line6);
+
+        }
+
+
+    </script>
+</body>
+
+</html>
